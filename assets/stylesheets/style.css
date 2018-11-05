@@ -97,6 +97,7 @@ label{
   font-family: "Arial";
   font-size: 12px;
   cursor: pointer;
+  border-style: outset;
 }
 
 .radio-toolbar input[type="radio"]:checked+label {
