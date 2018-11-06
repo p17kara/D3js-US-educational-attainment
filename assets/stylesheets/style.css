@@ -70,6 +70,18 @@ nav ul li a {
   color: #a9abae;
 }
 
+.navbar {
+  padding: .8rem;
+}
+
+.navbar-nav li {
+  padding-right: 20px;
+}
+
+.nav-link {
+   font-size: 1.1em !important;
+}
+
 body {
     font-size: 14px;
     font-family: "Muli", "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -81,7 +93,7 @@ text{
 
 label{
   font-family: "Muli", "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !IMPORTANT;
-     border-radius: 5px !IMPORTANT;
+     border-radius: 10px !IMPORTANT;
 }
 
 .radio-toolbar input[type="radio"] {
@@ -93,7 +105,7 @@ label{
 
   display: inline-block;
   background-color: #FF69B4;
-  padding: 4px 11px;
+  padding: 6px 14px;
   font-family: "Arial";
   font-size: 12px;
   cursor: pointer;
