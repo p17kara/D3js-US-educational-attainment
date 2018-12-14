@@ -13,15 +13,25 @@
 </head>
   <header>
     <nav>
-	<ul>
-      <li><a href="#top" onmouseover = "playSound();">Top</a></li>
-      <li><a href="#national" onmouseover = "playSound();">National</a></li>
-      <li><a href="#regional" onmouseover = "playSound();">Regional</a></li>
-      <li><a href="#state" onmouseover = "playSound();">State-Level</a></li>
-		</nav> 
+    <ul id="nav">
+      <li><a href="#top" onmouseover="playclip();" >Top</a></li>
+      <li><a href="#national" onclick="showhide('natwide');" onmouseover="playclip();">National</a></li>
+      <li><a href="#regional" onclick="showhide('reglevel');" onmouseover="playclip();">Regional</a></li>
+      <li><a href="#state" onclick="showhide('stalevel');" onmouseover="playclip();">State-Level</a></li>
+      <li><a href="index2.html" onmouseover="playclip();">Examples</a></li>
+    <ul>
+     </nav> 
     </header>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(window).on('resize', function(){
+           var win = $(this); 
+           if (win.width() > 800) 
+        });
+	</script>
+	
     <h1 class="title"  onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" > Educational Attainment in the United States </h1>
         
 	
@@ -83,6 +93,20 @@
 /* scrollTop() >= 240
    Should be equal the the height of the header
  */
+	function showhide(id){
+        if (document.getElementById) {
+          var divid = document.getElementById(id);
+          var divs = document.getElementsByClassName("mask");
+          for(var i=0;i<divs.length;i++) {
+            divs[i].style.display = "none";
+          }
+          divid.style.display = "block";
+        } 
+        return false;
+   }
+document.getElementById("reglevel").style.display = "none";
+document.getElementById("stalevel").style.display = "none";
+	
 </script>
 	<audio>
 <source src="Mouse Click Sound-23037-Free-Loops.com.mp3"></source>
