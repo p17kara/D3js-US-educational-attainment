@@ -33,12 +33,13 @@
 	</script>
 	
     <h1 class="title"  onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" > Educational Attainment in the United States </h1>
-        
+         <div class="hide" id="nationwide">
 	
 	<p><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" > Nation-Wide Education Level of Population in Schooling </h2>
         
     <svg id="pie-chart";width="960" height="450"></svg><a name="regional"></a>
+	<div class="hide" id="regionlevel"> 
     <p><br><br><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students')" onmouseleave="responsiveVoice.cancel();" > Educational Attainment: Region-level Breakdown of University Students </h2>
 	
@@ -56,6 +57,7 @@
     </form>
 	<p></p>
     <div id="chart" onmouseover="responsiveVoice.speak('Chart of Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Chart of Educational Attainment: Region-level Breakdown of University Students</div>
+	<div class="hide" id="statelevel">
 	<a name="state"></a>
     <p><br><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Education Level of Population in Schooling: State-level Breakdown</h2>
@@ -96,16 +98,16 @@
 	function showhide(id){
         if (document.getElementById) {
           var divid = document.getElementById(id);
-          var divs = document.getElementsByClassName("mask");
+          var divs = document.getElementsByClassName("hide");
           for(var i=0;i<divs.length;i++) {
             divs[i].style.display = "none";
           }
           divid.style.display = "block";
         } 
         return false;
-   }
-document.getElementById("reglevel").style.display = "none";
-document.getElementById("stalevel").style.display = "none";
+ }
+document.getElementById("regionlevel").style.display = "none";
+document.getElementById("statelevel").style.display = "none";
 	
 </script>
 	<audio>
