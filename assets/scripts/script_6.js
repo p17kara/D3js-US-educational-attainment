@@ -7,7 +7,7 @@ var pie=new d3pie("pieChart",{
     content:[
       {
         label:"Belgium",
-        value:1701596,
+        value:117,
         color:"#FFA500"
       },
       {
