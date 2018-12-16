@@ -1,52 +1,67 @@
-const dataset = [117  ,49  , 89  , 128 , 124, 79, 181 , 67, 92, 104 ];
-const datasetTitles = ["Belgium", "Bulgaria", "Czechia", "Denmark", "Germany", "Estonia", "Ireland", "Greece", "Spain", "France"];
-
-
-d3.select(".container")
-    .append("h3")
-    .text("GDP per capita in PPS");
-
-
-const w = d3.max(dataset)*2;
-const h = dataset.length*40;
-
-const svg = d3.select(".container")
-                .append("svg")
-                .attr("width", w)
-                .attr("height", h);
-
-
-svg.selectAll("rect")
-    .data(dataset)
-    .enter()
-    .append("rect")
-    .attr("x", 0)
-    .attr("y", (d, i) => i*40)
-    .attr("height", (d, i) => 35)
-    .attr("class", "bar")
-    .append("title")
-    .text((d, i) => datasetTitles[i]);
-
-svg.selectAll("text")
-    .data(dataset)
-    .enter()
-    .append("text")
-    .text((d) => d)
-    .attr("y", (d, i) => i * 40 + 25)
-    .attr("class", "data-point");
-
-
-
-svg.selectAll("rect")
-    .transition()
-    .duration(1000)
-    .delay((d, i) => 1000 + i*200)
-    .attr("width", (d, i) => d*1.5);
-
-
-svg.selectAll("text")
-    .transition()
-    .duration(1000)
-    .delay((d, i) => 1000 + i*200)
-    .style("opacity", 1)
-    .attr("x", (d, i) => d*1.5 + 5);
+var pie=new d3pie("pieChart",{ 
+  size:{
+    canvasHeight:400,
+    canvasWidth: 500
+  },
+  data:{
+    content:[
+      {
+        label:"2004",
+        value:1701596,
+        color:"#FFA500"
+      },
+      {
+        label:"2006",
+        value:3446512,
+        color:"#FF8C00"
+      },
+      {
+        label:"2008",
+        value:3913450,
+        color:"#FF7F50"
+      },
+      {
+        label:"2010",
+        value:2849335 ,
+        color:"#FF6347"
+      },
+      {
+        label:"2012",
+        value:2193687, 
+        color:"#FF4500"
+      },
+	  {
+        label:"2014",
+        value:2012754, 
+        color:"#FFD700"
+      },
+    ]
+  },
+  labels:{
+    outer:{
+      pieDistance:35
+    },
+    mainLabel:{
+      font:"verdana",
+      color:"#6473ce",
+      fontSize: 13
+    },
+    percentage:{
+      color:"#fff",
+      font:"verdana",
+      decimalPlaces: 0,
+      fontSize: 15
+    },
+    lines:{
+      enabled:!0,
+      color:"#ccc"
+    }
+  },
+  effects:{
+    pullOutSegmentOnClick:{
+      effect:"linear",
+      speed:400,
+      size:8
+    }
+  }
+});
