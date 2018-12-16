@@ -2,9 +2,9 @@ const dataset = [1,501.82  ,184.07  , 331.71  , 1,440.00, 390.00, 1,461.85, 683.
 const datasetTitles = ["Belgium", "Bulgaria", "Czechia", "Germany", "Estonia", "Ireland", "Greece", "Spain", "France", "Croatia"];
 
 
-d3.select(".piechart")
+d3.select(".container")
     .append("h2")
-    .text("EUR/month");
+    .text("Minimum Wages");
 
 
 const w = d3.max(dataset)*2;
