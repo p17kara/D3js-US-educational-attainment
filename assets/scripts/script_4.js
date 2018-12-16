@@ -10,7 +10,7 @@ d3.select(".container")
 const w = d3.max(dataset)*2;
 const h = dataset.length*40;
 
-const svg = d3.select(".container")
+const svg = d3.select('#chart-pie')
                 .append("svg")
                 .attr("width", w)
                 .attr("height", h);
