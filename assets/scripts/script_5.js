@@ -1,33 +1,33 @@
 var data = [{
   "country": "Belgium",
-  "EUR/month": 92
+  "EUR/month": 1,501.82,
 }, {
   "country": "Bulgaria",
-  "EUR/month": 65,
+  "EUR/month": 184.07,
 }, {
   "country": "Czechia",
-  "EUR/month": 85,
+  "EUR/month": 331.71,
 }, {
   "country": "Germany",
-  "EUR/month": 101,
+  "EUR/month":  1,440.00,
 }, {
   "country": "Estonia",
-  "EUR/month": 104,
+  "EUR/month": 390.00,
 }, {
   "country": "Ireland",
-  "EUR/month": 117,
+  "EUR/month": 1,461.85,
 }, {
   "country": "Greece",
-  "EUR/month": 97,
+  "EUR/month": 683.76,
 }, {
   "country": "Spain",
-  "EUR/month": 92,
+  "EUR/month": 756.70,
 }, {
   "country": "France",
-  "EUR/month": 90,
+  "EUR/month": 1,457.52,
 }, {
   "country": "Croatia",
-  "EUR/month": 90,
+  "EUR/month": 395.61,
 }];
 
 
