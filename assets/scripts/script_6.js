@@ -6,35 +6,50 @@ var pie=new d3pie("pieChart",{
   data:{
     content:[
       {
-        label:"2004",
+        label:"Belgium",
         value:1701596,
         color:"#FFA500"
       },
       {
-        label:"2006",
+        label:"Bulgaria",
         value:3446512,
         color:"#FF8C00"
       },
       {
-        label:"2008",
+        label:"Czechia",
         value:3913450,
         color:"#FF7F50"
       },
       {
-        label:"2010",
+        label:"Denmark",
         value:2849335 ,
         color:"#FF6347"
       },
       {
-        label:"2012",
+        label:"Germany",
         value:2193687, 
         color:"#FF4500"
       },
 	  {
-        label:"2014",
+        label:"Estonia",
         value:2012754, 
         color:"#FFD700"
       },
+      {
+        label:"Greece",
+        value:2193687, 
+        color:"#FF4500"
+      },   
+      {
+        label:"Spain",
+        value:2193687, 
+        color:"#FF4500"
+      }, 
+      {
+        label:"France",
+        value:2193687, 
+        color:"#FF4500"
+      },     
     ]
   },
   labels:{
