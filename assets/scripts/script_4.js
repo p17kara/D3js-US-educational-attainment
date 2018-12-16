@@ -4,7 +4,7 @@ const datasetTitles = ["Belgium", "Bulgaria", "Czechia", "Denmark", "Germany", "
 
 d3.select(".container")
     .append("h1")
-    .text("Population on 1 January in 2017");
+    .text("Population");
 
 
 const w = d3.max(dataset)*2;
