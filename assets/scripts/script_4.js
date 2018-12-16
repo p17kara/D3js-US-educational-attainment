@@ -1,10 +1,10 @@
-const dataset = [36.5,41.4, 99.9 , 57.3];
-const datasetTitles = ["Belgium", "United States"];
+const dataset = [11,351,727 ,7,101,859 , 10,578,820  , 5,748,769, 82,521,653, 1,315,635, 4,784,383, 10,768,193, 46,527,039, 66,989,083 ];
+const datasetTitles = ["Belgium", "Bulgaria", "Czechia", "Denmark", "Germany", "Estonia", "Ireland", "Greece", "Spain", "France"];
 
 
 d3.select(".container")
-    .append("h2")
-    .text("Minimum wages");
+    .append("h1")
+    .text("Population");
 
 
 const w = d3.max(dataset)*2;
