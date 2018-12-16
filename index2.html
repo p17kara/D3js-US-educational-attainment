@@ -1,89 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" >
+
 <head>
   <meta charset="UTF-8">
-<title>Examples</title>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="stylesheet/style.css">
- <script type="text/javascript" src="mouseover.js"></script>
-<script src ="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js"></script>
+  <title>Examples</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/stylesheets/style_2.css">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css'>
+  <link rel="stylesheet" href="assets/stylesheets/style_3.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css'>
+ <style>
+      .chart {
+  width: 100%;
+  min-height: 400px;
+}
+</style>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
-
-<header>
-  <div class="custom-padding">
-      <nav>
-        <div class="logo">D3.js</div>
-      <ul class="menu-area">
-          <li><a href="#example 1" onmouseover="playclip();">example 1</a></li>
-          <li><a href="#example 2" onmouseover="playclip();">example 2</a></li>
-          <li><a href="#example 3" onmouseover="playclip();">example 3</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<body>
-	h2 class="subtitle">Population</h2>
-<svg id="chart"></svg>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="assets/scripts/script_4.js"></script>
-</div>
-
-</body>
-</html>
-
-<p><br><br><br></p>
-
-  
-<h2 class="subtitle">on 1 January</h2>
-	                                         
-<script  src="script_4.js"></script>
-
-       <p><br><br><br></p>
-         <p><br><br><br></p>
-       <p><br><br><br></p>
- 
- <a name="example 2"></a>
-<h2 class="subtitle">Minimum wages</h2>
- 
-   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="panel">
-          <div class="panel-body">
-            <form role="form" class="categories">
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="example"></div>
-      </div>
+ <body>
+  <div align="center">
+    <h1>Population on 1 January</h1>
+    <br>
+    <div class="container">
     </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js'></script>
+    <script  src="assets/scripts/script_4.js"></script>
+    <div class="bg-indigo-darkest h-16 text-center p-6">
+    </div>
+    <h2> Minimum wages </h2>
+    <div id="pieChart" class="text-black p-8 cursor-pointer h-screen"></div> 
+    <div class="bg-indigo-darkest text-center py-4 lg:px-4 -mt-8"> 
+    <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+    </div>
+   <script src='https://d3js.org/d3.v3.min.js'></script>
+   <script src='https://scaleyourcode.com/js/plugins/d3pie/d3pie.min.js'></script>
+   <script  src="assets/scripts/script_5.js"></script>
+   <h2> GDP per capita in PPS</h2>
+   <svg class="chart"></svg>
+   <script src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js'></script>
+   <script  src="assets/scripts/script_6.js"></script>
   </div>
- 
- <p><br><br><br></p>
-     
-	<svg id="bar-chart" width="960" height="500"></svg>
-   
-
-	<div id="chart2"><svg height="400"></svg></div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
-    <script src='https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.min.js'></script>
-	
- 
-       
-      
-     
-     <audio>
-	  <source src="Click.mp3"></source>
-          <source src="Click.ogg"></source>
-       </audio>
-         
-  
-  <script src ="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js"></script>
-        <script  src="script_4.js"></script>
-
-</body>
-
+ </body>
 </html>
