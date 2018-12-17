@@ -15,24 +15,15 @@
     <nav>
     <ul id="nav">
       <li><a href="#top" onmouseover="playclip();" >Top</a></li>
-      <li><a href="#national" onclick="showhide('natwide');" onmouseover="playclip();">National</a></li>
-      <li><a href="#regional" onclick="showhide('reglevel');" onmouseover="playclip();">Regional</a></li>
-      <li><a href="#state" onclick="showhide('stalevel');" onmouseover="playclip();">State-Level</a></li>
+      <li onmouseover="play(); showThis('nationwide');"><a href="#national">National</a></li>
+      <li onmouseover="play(); showThis('regionlevel');"><a href="#regional">Regional</a></li>
+      <li onmouseover="play(); showThis('statelevel');"><a href="#state">State-Level</a></li>
       <li><a href="index2.html" onmouseover="playclip();">Examples</a></li>
     <ul>
      </nav> 
     </header>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script type="text/javascript">
-	$(window).resize(function(){
-		if(window.innerWidth > 768) {
-			$("#nav").removeAttr("style");
-		}
-	});
-	</script>
-
 	
     <h1 class="title"  onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" > Educational Attainment in the United States </h1>
          <div class="hide" id="nationwide">
@@ -97,17 +88,16 @@
 /* scrollTop() >= 240
    Should be equal the the height of the header
  */
-	function showhide(id){
-        if (document.getElementById) {
-          var divid = document.getElementById(id);
-          var divs = document.getElementsByClassName("hide");
-          for(var i=0;i<divs.length;i++) {
-            divs[i].style.display = "none";
-          }
-          divid.style.display = "block";
-        } 
-        return false;
- }
+	function showThis(id) {
+    if (document.getElementById) {
+	var thisId = document.getElementById(id);
+	var blocks = document.getElementsByClassName("hidden");
+	for(var i=0; i<blocks.length; i++) {
+            blocks[i].style.display = "none";
+	}
+	thisId.style.display = "block";
+    } 
+}
 document.getElementById("regionlevel").style.display = "none";
 document.getElementById("statelevel").style.display = "none";
 	
