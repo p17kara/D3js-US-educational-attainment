@@ -42,7 +42,7 @@ var pie=new d3pie("pieChart",{
       },   
       {
         label:"Spain",
-        value:21936865, 
+        value:2193686, 
         color:"#FF7F50"
       }, 
       {
