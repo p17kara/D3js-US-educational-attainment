@@ -52,31 +52,23 @@ var pie=new d3pie("pieChart",{
       },     
     ]
   },
-  labels:{
-    outer:{
-      pieDistance:35
-    },
-    mainLabel:{
-      font:"verdana",
-      color:"#6473ce",
-      fontSize: 13
-    },
-    percentage:{
-      color:"#fff",
-      font:"verdana",
-      decimalPlaces: 0,
-      fontSize: 15
-    },
-    lines:{
-      enabled:!0,
-      color:"#ccc"
-    }
-  },
-  effects:{
-    pullOutSegmentOnClick:{
-      effect:"linear",
-      speed:400,
-      size:8
-    }
-  }
-});
+  chart = {
+  const svg = d3.select(DOM.svg(width, height));
+
+  svg.append("g")
+      .call(xAxis);
+
+  svg.append("g")
+      .call(yAxis);
+  
+  svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 1.5)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("d", line);
+  
+  return svg.node();
+}
