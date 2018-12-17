@@ -71,6 +71,7 @@ data = Array(26) [
   17: Object {name: "Y", value: 0.01974}
   18: Object {name: "P", value: 0.01929}
   19: Object {name: "B", value: 0.01492}
+  ]
   
   data = (await require("@observablehq/alphabet"))
   .slice()
