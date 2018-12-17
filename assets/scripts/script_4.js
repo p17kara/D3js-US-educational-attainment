@@ -38,78 +38,46 @@ chart = {
   return svg.node();
 }
 
-data = Array(18) [
+data = Array(9) [
   0: Object {
-  name: "<5"
+  name: "Belgium"
   value: 19912018
 }
   1: Object {
-  name: "5-9"
+  name: "Bulgaria"
   value: 20501982
 }
   2: Object {
-  name: "10-14"
+  name: "Czechia"
   value: 20679786
 }
   3: Object {
-  name: "15-19"
+  name: "Denmark"
   value: 21354481
 }
   4: Object {
-  name: "20-24"
+  name: "Germany"
   value: 22604232
 }
   5: Object {
-  name: "25-29"
+  name: "Estonia"
   value: 21698010
 }
   6: Object {
-  name: "30-34"
+  name: "Ireland"
   value: 21183639
 }
   7: Object {
-  name: "35-39"
+  name: "Greece"
   value: 19855782
 }
   8: Object {
-  name: "40-44"
+  name: "Spain"
   value: 20796128
 }
   9: Object {
-  name: "45-49"
+  name: "France"
   value: 21370368
-}
-  10: Object {
-  name: "50-54"
-  value: 22525490
-}
-  11: Object {
-  name: "55-59"
-  value: 21001947
-}
-  12: Object {
-  name: "60-64"
-  value: 18415681
-}
-  13: Object {
-  name: "65-69"
-  value: 14547446
-}
-  14: Object {
-  name: "70-74"
-  value: 10587721
-}
-  15: Object {
-  name: "75-79"
-  value: 7730129
-}
-  16: Object {
-  name: "80-84"
-  value: 5811429
-}
-  17: Object {
-  name: "≥85"
-  value: 5938752
 }
 ]
 color = d3.scaleOrdinal()
