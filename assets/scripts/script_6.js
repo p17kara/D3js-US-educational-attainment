@@ -37,18 +37,18 @@ var pie=new d3pie("pieChart",{
       },
       {
         label:"Greece",
-        value:2193687, 
-        color:"#FF4500"
+        value:2193688, 
+        color:"#7FFF00"
       },   
       {
         label:"Spain",
-        value:2193687, 
-        color:"#FF4500"
+        value:21936865, 
+        color:"#FF7F50"
       }, 
       {
         label:"France",
-        value:2193687, 
-        color:"#FF4500"
+        value:2193689, 
+        color:"#e6fc00"
       },     
     ]
   },
