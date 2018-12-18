@@ -24,6 +24,15 @@
     </header>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    
+	<script type="text/javascript">
+	$(window).resize(function(){
+		if(window.innerWidth > 768) {
+			$("#nav").removeAttr("style");
+		}
+	});
+        </script>
 	
     <h1 class="title"  onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" > Educational Attainment in the United States </h1>
          <div class="hide" id="nationwide">
@@ -32,6 +41,7 @@
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" > Nation-Wide Education Level of Population in Schooling </h2>
         
     <svg id="pie-chart";width="960" height="450"></svg><a name="regional"></a>
+	</div>
 	<div class="hide" id="regionlevel"> 
     <p><br><br><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students')" onmouseleave="responsiveVoice.cancel();" > Educational Attainment: Region-level Breakdown of University Students </h2>
@@ -88,7 +98,7 @@
 /* scrollTop() >= 240
    Should be equal the the height of the header
  */
-	function showhide(id){
+function showhide(id){
         if (document.getElementById) {
           var divid = document.getElementById(id);
           var divs = document.getElementsByClassName("hide");
@@ -98,6 +108,9 @@
           divid.style.display = "block";
         } 
         return false;
+}
+document.getElementById("regionlevel").style.display = "none";
+document.getElementById("statelevel").style.display = "none";
 	
 </script>
 	<audio>
