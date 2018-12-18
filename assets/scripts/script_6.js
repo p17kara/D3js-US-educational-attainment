@@ -1,82 +1,8 @@
-var pie=new d3pie("pieChart",{ 
-  size:{
-    canvasHeight:400,
-    canvasWidth: 500
-  },
-  data:{
-    content:[
-      {
-        label:"Belgium",
-        value:1701596,
-        color:"#FFA500"
-      },
-      {
-        label:"Bulgaria",
-        value:3446512,
-        color:"#FF8C00"
-      },
-      {
-        label:"Czechia",
-        value:3913450,
-        color:"#FF7F50"
-      },
-      {
-        label:"Denmark",
-        value:2849335 ,
-        color:"#FF6347"
-      },
-      {
-        label:"Germany",
-        value:2193687, 
-        color:"#FF4500"
-      },
-	  {
-        label:"Estonia",
-        value:2012754, 
-        color:"#FFD700"
-      },
-      {
-        label:"Greece",
-        value:2193688, 
-        color:"#7FFF00"
-      },   
-      {
-        label:"Spain",
-        value:2193686, 
-        color:"#FF7F50"
-      }, 
-      {
-        label:"France",
-        value:2193689, 
-        color:"#e6fc00"
-      },     
+var chart = c3.generate({
+  bindto: d3.select('.chart'),
+  data: {
+    columns: [
+      ['Frequency of participation in cultural or sport activities in 2015', 68.1, 28.6, 70.2, 85.3, 73.3, 69.8, 69.1, 46.9, 58.5, 77.7]
     ]
-  },
-  labels:{
-    outer:{
-      pieDistance:35
-    },
-    mainLabel:{
-      font:"verdana",
-      color:"#6473ce",
-      fontSize: 13
-    },
-    percentage:{
-      color:"#fff",
-      font:"verdana",
-      decimalPlaces: 0,
-      fontSize: 15
-    },
-    lines:{
-      enabled:!0,
-      color:"#ccc"
-    }
-  },
-  effects:{
-    pullOutSegmentOnClick:{
-      effect:"linear",
-      speed:400,
-      size:8
-    }
   }
 });
