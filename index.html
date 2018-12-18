@@ -88,19 +88,39 @@
 /* scrollTop() >= 240
    Should be equal the the height of the header
  */
-	function showhide(id){
-        if (document.getElementById) {
-          var divid = document.getElementById(id);
-          var divs = document.getElementsByClassName("hide");
-          for(var i=0;i<divs.length;i++) {
-            divs[i].style.display = "none";
-          }
-          divid.style.display = "block";
-        } 
-        return false;
- }
-document.getElementById("regionlevel").style.display = "none";
-document.getElementById("statelevel").style.display = "none";
+	function national() {
+	document.getElementById("regionlevel").style.display = "none";
+	document.getElementById("tree-form").style.display = "none";
+	document.getElementById("stack-form").style.display = "none";
+	document.getElementById("statelevell").style.display = "none";
+    	document.getElementById("chart").style.display = "none";
+	document.getElementById("stacked-bar-chart").style.display = "none";
+	document.getElementById("pie-chart").style.display = "block";
+	document.getElementById("nationwide").style.display = "block";
+	
+}
+function regional() {
+	document.getElementById("stack-form").style.display = "none";
+	document.getElementById("statelevell").style.display = "none";
+	document.getElementById("nationwide").style.display = "none";
+  	document.getElementById("pie-chart").style.display = "none";
+	document.getElementById("stacked-bar-chart").style.display = "none";
+	document.getElementById("chart").style.display = "block";
+	document.getElementById("regionlevel").style.display = "block";
+	document.getElementById("tree-form").style.display = "block";
+	
+	
+}
+function statelevel() {
+	document.getElementById("tree-form").style.display = "none";
+	document.getElementById("regionlevel").style.display = "none";
+	document.getElementById("nationwide").style.display = "none";
+   	document.getElementById("pie-chart").style.display = "none";
+	document.getElementById("chart").style.display = "none";
+	document.getElementById("stacked-bar-chart").style.display = "block";
+	document.getElementById("stack-form").style.display = "block";
+	document.getElementById("statelevell").style.display = "block";
+}
 	
 </script>
 	<audio>
