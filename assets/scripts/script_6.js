@@ -1,65 +1,93 @@
-var data = [
-  {country: "Germany", 2006: 78.4, 2015: 73.3},
-  {country: "France", 2006: 70.0, 2015: 77.7},
-  {country: "Spain", 2006:  65.6, 2015:  58.5},
-  {country: "Greece", 2006:  47.9, 2015:  46.9}
-];
+var data = [{
+  'name':"Belgium",'value': 68.1 
+},{
+  'name':"Bulgaria",'value': 28.6
+},{
+  'name':"Czechia",'value': 70.2
+},{
+  'name':"Denmark",'value': 85.3
+},{
+  'name':"Germany", 'value': 73.3
+},{
+  'name':"Estonia",'value': 69.8
+},{
+  'name':"Greece",'value': 46.9
+}];
 
-var series = d3.stack()
-    .keys(["2006", "2015"])
-    .offset(d3.stackOffsetDiverging)
-    (data);
 
-var svg = d3.select("svg"),
-    margin = {top: 20, right: 30, bottom: 30, left: 60},
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+// Set the dimensions of our chart to be displayed 
+var barsWidth = 500,
+	barsHeight = 400,
+	axisMargin = 100;
 
-var x = d3.scaleBand()
-    .domain(data.map(function(d) { return d.country; }))
-    .rangeRound([margin.left, width - margin.right])
-    .padding(0.1);
+var chartHeight = barsHeight+axisMargin,
+	chartWidth = barsWidth+axisMargin;
 
-var y = d3.scaleLinear()
-    .domain([d3.min(series, stackMin), d3.max(series, stackMax)])
-    .rangeRound([height - margin.bottom, margin.top]);
 
-var z = d3.scaleOrdinal(d3.schemeCategory10);
+// Select the chart element on the page so we can reference it in code
+// Also set the width and height attributes of the chart SVG 
+var chart = d3.select('#chart')
+	.attr('width', chartWidth+100)
+	.attr('height', chartHeight);
 
-svg.append("g")
-  .selectAll("g")
-  .data(series)
-  .enter().append("g")
-    .attr("fill", function(d) { return z(d.key); })
-  .selectAll("rect")
-  .data(function(d) { return d; })
-  .enter().append("rect")
-    .attr("width", x.bandwidth)
-    .attr("x", function(d) { return x(d.data.country); })
-    .attr("y", function(d) { return y(d[1]); })
-    .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+// Create a linear scale for our y-axis to map datapoint values to pixel heights of bars
+var yScale = d3.scaleLinear()
+	.domain([0,d3.max(data, function(d){
+    // return the value property of each datapoint so the max function can compare
+		return d.value;
+	})])
+	.rangeRound([barsHeight, 0]);
 
-svg.append("g")
-    .attr("transform", "translate(0," + y(0) + ")")
-    .call(d3.axisBottom(x));
+// Create a scale that returns the bands each bar should be in along the x-axis
+let xScale = d3.scaleBand()
+	.domain(
+		data.map(
+			function(d){
+        // For each datapoint in our data array
+        // Return the name property into our new domain array
+				return d.name;
+			}
+		)
+	)
+	.rangeRound([0,barsWidth])
+	.padding(0.1);
 
-svg.append("g")
-    .attr("transform", "translate(" + margin.left + ",0)")
-    .call(d3.axisLeft(y));
+// Create an SVG group that we will add the individual bar elements of our chart to
+var bars = chart.append('g')
+	.attr('id', "bars-container");
 
-function stackMin(serie) {
-  return d3.min(serie, function(d) { return d[0]; });
-}
+// Bind the data to our .bars svg elements
+// Create a rectangle for each data point and set position and dimensions using scales
+bars.selectAll('.bar')
+	.data(data)
+	.enter().append("rect")
+		.attr('class', "bar")
+		.attr('x', function(d){
+			return xScale(d.name);
+		})
+		.attr('y', function(d){
+			return yScale(d.value); 
+		})
+		.attr('width', xScale.bandwidth())
+		.attr('height', function(d){return barsHeight-yScale(d.value);});
 
-function stackMax(serie) {
-  return d3.max(serie, function(d) { return d[1]; });
-}
+// Move the bars so that there is space on the left for the y-axis
+bars.attr('transform', 'translate('+axisMargin+',0)');
 
-var chart = c3.generate({
-  bindto: d3.select('.chart'),
-  data: {
-    columns: [
-      ['Frequency of participation in cultural or sport activities in 2015', 68.1, 28.6, 70.2, 85.3, 73.3, 69.8, 69.1, 46.9, 58.5, 77.7]
-    ]
-  }
-});
+// Create a new SVG group for the y-axis elements
+// Generate the y-axis with 10 ticks and move into position
+yAxis = chart.append('g')
+	.attr('id','y-axis')
+	.call(d3.axisLeft(yScale).ticks(10))
+		.attr('transform', 'translate('+axisMargin+',0)');
+
+// Create another group for the x-axis elements
+// Generate the x-axis using the our x scale and move into positon
+// Select the text elements and rotate by 45 degrees
+xAxis = chart.append('g')
+	.attr('id', 'x-axis')
+	.call(d3.axisBottom(xScale))
+	.attr('transform', 'translate('+axisMargin+','+barsHeight+')')
+	.selectAll("text")
+		.style("text-anchor",'start')
+		.attr('transform', 'rotate(45)');
