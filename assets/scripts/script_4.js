@@ -2,19 +2,25 @@
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
-body {
-  background: white;
-  text-align: center;
+.bar{
+	fill: #28C587;
+}
+/* Lighten the axis lines */
+#x-axis path,#y-axis line, #y-axis path{
+	stroke: #666;
+}
+/* Remove the tick marks on the x-axis */
+#x-axis .tick line{
+	visibility: hidden;
 }
 
-svg {
-  /*filter: url('#dropshadow');*/
+text{
+	fill: #666;
+	font-size: 12px;
 }
 
-path {
-  cursor: pointer;
-  stroke: #ccc;
-  stroke-width: 0px;
+#x-axis text {
+	font-weight: 600;
 }
 
 var data = [{
