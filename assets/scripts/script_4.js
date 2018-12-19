@@ -1,3 +1,22 @@
+<svg id="chart"></svg>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+body {
+  background: white;
+  text-align: center;
+}
+
+svg {
+  /*filter: url('#dropshadow');*/
+}
+
+path {
+  cursor: pointer;
+  stroke: #ccc;
+  stroke-width: 0px;
+}
+
 var data = [{
   'name':"Belgium",'value': 11 
 },{
