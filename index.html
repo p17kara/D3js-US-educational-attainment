@@ -15,9 +15,9 @@
     <nav>
     <ul id="nav">
       <li><a href="#top" onmouseover="playclip();" >Top</a></li>
-      <li><a href="#national" onclick="showhide('nationwide');" onmouseover="playclip();">National</a></li>
-      <li><a href="#regional" onclick="showhide('regionlevel');" onmouseover="playclip();">Regional</a></li>
-      <li><a href="#state" onclick="showhide('statelevel');" onmouseover="playclip();">State-Level</a></li>
+      <li><a href="#national" onclick="showhide('nationwide');" onmouseover="playclip(); onclick="FunctionChart1()">National</a></li>
+      <li><a href="#regional" onclick="showhide('regionlevel');" onmouseover="playclip(); onclick="FunctionChart2()">Regional</a></li>
+      <li><a href="#state" onclick="showhide('statelevel');" onmouseover="playclip(); onclick="FunctionChart3()">State-Level</a></li>
       <li><a href="index2.html" onmouseover="playclip();">Examples</a></li>
     <ul>
      </nav> 
@@ -38,12 +38,14 @@
          <div class="hide" id="nationwide">
 	
 	<p><br></p>
+	<div id="Chart1"> 
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" > Nation-Wide Education Level of Population in Schooling </h2>
         
     <svg id="pie-chart";width="960" height="450"></svg><a name="regional"></a>
 	</div>
 	<div class="hide" id="regionlevel"> 
     <p><br><br><br></p>
+     <div id="Chart2">	
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students')" onmouseleave="responsiveVoice.cancel();" > Educational Attainment: Region-level Breakdown of University Students </h2>
 	
     <form id="tree-form">
@@ -63,6 +65,7 @@
 	<div class="hide" id="statelevel">
 	<a name="state"></a>
     <p><br><br></p>
+	<div id="Chart3">
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Education Level of Population in Schooling: State-level Breakdown</h2>
 	
     <form id="stack-form">
@@ -98,19 +101,45 @@
 /* scrollTop() >= 240
    Should be equal the the height of the header
  */
-function showhide(id){
-        if (document.getElementById) {
-          var divid = document.getElementById(id);
-          var divs = document.getElementsByClassName("hide");
-          for(var i=0;i<divs.length;i++) {
-            divs[i].style.display = "none";
-          }
-          divid.style.display = "block";
-        } 
-        return false;
+function FunctionChart1() {
+    var x = document.getElementById("Chart1");
+    var y = document.getElementById("Chart2");
+    var w = document.getElementById("Chart3");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+	y.style.display = "none";
+	w.style.display = "none";
+    } else {
+	x.style.display = "none";
+    }
 }
-document.getElementById("regionlevel").style.display = "none";
-document.getElementById("statelevel").style.display = "none";
+function FunctionChart2() {
+    var x = document.getElementById("Chart1");
+    var y = document.getElementById("Chart2");
+    var w = document.getElementById("Chart3");
+    if (y.style.display === "none") {
+        x.style.display = "none";
+	y.style.display = "block";
+	w.style.display = "none";
+    } else {
+        y.style.display = "none";
+    }
+}
+function FunctionChart3() {
+    var x = document.getElementById("Chart1");
+    var y = document.getElementById("Chart2");
+    var w = document.getElementById("Chart3");
+    if (w.style.display === "none") {
+        x.style.display = "none";
+	y.style.display = "none";
+	w.style.display = "block";
+    } else {
+        w.style.display = "none";
+    }
+}
+	
+FunctionChart2();
+FunctionChart3();
 	
 </script>
 	<audio>
