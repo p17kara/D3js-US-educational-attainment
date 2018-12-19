@@ -27,7 +27,7 @@ function exampleData() {
       } ,
       { 
         "label": "Bulgaria",
-        "value" : 325182
+        "value" : 213984
       } ,
       { 
         "label": "Czechia",
@@ -39,7 +39,7 @@ function exampleData() {
       } ,
       { 
         "label": "Germany",
-        "value" : 163688
+        "value" : 325182
       } ,
       { 
         "label": "Estonia",
@@ -47,15 +47,15 @@ function exampleData() {
       } ,
       { 
         "label": "Ireland",
-        "value" : 144449
+        "value" : 162591
       } ,
       { 
         "label": "Greece",
-        "value" : 139981
+        "value" : 144449
       } , 
       { 
         "label": "Spain",
-        "value" : 115490
+        "value" : 112486
       } ,
       { 
         "label": "France",
