@@ -1,28 +1,3 @@
-<svg id="chart"></svg>
-
-<script src="https://d3js.org/d3.v4.min.js"></script>
-
-.bar{
-	fill: #28C587;
-}
-/* Lighten the axis lines */
-#x-axis path,#y-axis line, #y-axis path{
-	stroke: #666;
-}
-/* Remove the tick marks on the x-axis */
-#x-axis .tick line{
-	visibility: hidden;
-}
-
-text{
-	fill: #666;
-	font-size: 12px;
-}
-
-#x-axis text {
-	font-weight: 600;
-}
-
 var data = [{
   'name':"Belgium",'value': 11 
 },{
